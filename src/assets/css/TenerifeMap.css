@@ -9,7 +9,7 @@
 
 .map-wrapper {
   flex-grow: 1;
-  position: relative; /* Importante para posicionar nuestro botón */
+  position: relative; 
   transition: all 0.3s ease;
 }
 
@@ -17,7 +17,7 @@
   margin-right: 350px; 
 }
 
-/* CONTENEDOR DE NUESTROS BOTONES (Encima del mapa) */
+/* CONTENEDOR DE NUESTROS BOTONES*/
 .custom-map-controls {
     position: absolute;
     bottom: 20px;
@@ -124,11 +124,17 @@
 .web-link { display: block; margin-top: 20px; padding: 10px; background: #3498db; color: white; text-align: center; text-decoration: none; border-radius: 5px; }
 
 /* ESTILO BOTÓN SALIR MAPA */
-.exit-button-container {
+
+.left-top-buttons{
   position: absolute;
   top: 20px;
   left: 20px;
   z-index: 1100; 
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  align-items: center;
+  width: fit-content;
 }
 
 .exit-button {
@@ -199,4 +205,125 @@
 .custom-cluster:hover {
   transform: scale(1.1);
   filter: brightness(1.2);
+}
+
+/** ESTILO ELEMENTOS DEL BUSCADOR */
+
+.search-glass-wrapper {
+  width: 350px; 
+  display: flex;
+  background: linear-gradient(135deg, rgba(224, 242, 247, 0.85) 0%, rgba(209, 237, 245, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  padding: 2px 12px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-glass-wrapper:focus-within {
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+  border: 1px solid rgba(52, 152, 219, 0.5);
+  transform: scale(1.02); 
+}
+
+.search-glass-wrapper input {
+  background: transparent;
+  border: none;
+  color: #2c3e50; 
+  padding: 12px 5px;
+  flex-grow: 1;
+  outline: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.search-glass-wrapper input::placeholder {
+  color: #7f8c8d;
+  font-weight: 400;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.search-btn:hover {
+  transform: scale(1.15); 
+}
+
+.search-btn:active {
+  transform: scale(0.95);
+}
+
+.search-btn img {
+  width: 24px; 
+  height: 24px;
+  image-rendering: -webkit-optimize-contrast;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.search-error-toast {
+  position: fixed;
+  top: 25px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4757;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 2000; /* Asegurar que esté por encima de TODO */
+  
+  /* Sombra de error más agresiva */
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.4);
+  
+  /* Animación con un ligero rebote (elastic) */
+  animation: fadeInDown 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes fadeInDown {
+  from { 
+    opacity: 0; 
+    transform: translate(-50%, -40px) scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translate(-50%, 0) scale(1); 
+  }
+}
+
+.search-navigation {
+  position: absolute;
+  bottom: 20px; 
+  left: 200px;
+  transform: translateX(-50%);
+  z-index: 1050;
+}
+
+.search-navigation button {
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  transition: all 0.2s;
+}
+
+.search-navigation button:hover {
+  background: #2980b9;
+  transform: scale(1.05);
 }
