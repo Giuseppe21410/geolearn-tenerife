@@ -85,36 +85,52 @@
     font-weight: bold;
 }
 
-/* ESTILO ZOOM */
+/* ESTILO ZOOM CONTENEDOR */
 .leaflet-bar {
   display: flex !important;
   flex-direction: row !important;
   border: 1px solid black !important; /* Borde negro solicitado */
   box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
   border-radius: 10px !important; /* Redondeo solicitado */
-  overflow: hidden; /* Importante para que los botones no se salgan del borde redondeado */
+  overflow: hidden; 
+  /* Aplicamos el gradiente que combine con el buscador */
   background: linear-gradient(135deg, #e0f2f7 0%, #d1edf5 100%) !important;
+  backdrop-filter: blur(10px); /* Toque extra de cristal */
 }
 
+/* ESTILO BOTONES (+ y -) */
 .leaflet-bar a {
   width: 40px !important;
   height: 40px !important;
   line-height: 40px !important;
-  background: white !important;
-  color: black !important;
+  /* CAMBIO CLAVE: Quitamos el 'white' para que se vea el gradiente del padre */
+  background: transparent !important; 
+  color: #2c3e50 !important; /* Un tono más elegante para el + y - */
   border: none !important;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: bold !important;
+  font-size: 18px !important;
 }
 
-/* Separación visual interna entre el + y el - */
+/* Separación visual interna sutil */
 .leaflet-bar a:first-child {
-  border-right: 1px solid rgba(0,0,0,0.1) !important;
+  border-right: 1px solid rgba(0,0,0,0.15) !important;
 }
-.leaflet-disabled span{
-  color:#94A3B8;
-}
+
+/* Efecto Hover */
 .leaflet-bar a:hover {
-  background-color: #f0f0f0 !important;
+  background-color: rgba(255, 255, 255, 0.3) !important; /* Brillo sutil al pasar el ratón */
+  color: #000 !important;
+}
+
+/* Iconos deshabilitados (cuando llegas al zoom max/min) */
+.leaflet-bar a.leaflet-disabled {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  cursor: default;
+}
+
+.leaflet-disabled span {
+  color: #94A3B8 !important;
 }
 
 
