@@ -1,0 +1,155 @@
+/* ESTRUCTURA BASE */
+.map-page-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-wrapper {
+  flex-grow: 1;
+  position: relative; /* Importante para posicionar nuestro botón */
+  transition: all 0.3s ease;
+}
+
+.map-wrapper.with-panel {
+  margin-right: 350px; 
+}
+
+/* CONTENEDOR DE NUESTROS BOTONES (Encima del mapa) */
+.custom-map-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000; /* Por encima del mapa */
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+/* Alineamos el Zoom de Leaflet para que encaje con nuestro botón */
+.leaflet-bottom.leaflet-left {
+    position: absolute !important; 
+    display: flex !important;
+    bottom: 100px !important;
+    left :10px !important;
+}
+
+.leaflet-control-zoom{
+    border-radius: 20px !important;
+}
+
+/* ESTILO DEL BOTÓN DE VISTA */
+.view-toggle-btn {
+    width: 83px;
+    height: 83px;
+    border-radius: 12px;
+    border: 2px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.view-toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+.map-wrapper.with-panel{
+    margin: 0px !important;
+}
+
+/* Si estamos en modo MAPA, el botón muestra miniatura de SATÉLITE */
+.view-toggle-btn.mode-map {
+    background-image: url('../img/tenerife-satelite.png');
+}
+
+/* Si estamos en modo SATÉLITE, el botón muestra miniatura de MAPA */
+.view-toggle-btn.mode-sat {
+    background-image: url('../img/tenerife-vista.png');
+}
+
+.view-toggle-label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    padding: 3px 0;
+    font-weight: bold;
+}
+
+/* ESTILO ZOOM */
+.leaflet-bar {
+  display: flex !important;
+  flex-direction: row !important;
+  border: 1px solid black !important; /* Borde negro solicitado */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+  border-radius: 10px !important; /* Redondeo solicitado */
+  overflow: hidden; /* Importante para que los botones no se salgan del borde redondeado */
+  background: linear-gradient(135deg, #e0f2f7 0%, #d1edf5 100%) !important;
+}
+
+.leaflet-bar a {
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  background: white !important;
+  color: black !important;
+  border: none !important;
+  transition: background 0.2s ease;
+}
+
+/* Separación visual interna entre el + y el - */
+.leaflet-bar a:first-child {
+  border-right: 1px solid rgba(0,0,0,0.1) !important;
+}
+.leaflet-disabled span{
+  color:#94A3B8;
+}
+.leaflet-bar a:hover {
+  background-color: #f0f0f0 !important;
+}
+
+
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+.close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; border: none; background: none; cursor: pointer; }
+.badge { display: inline-block; padding: 5px 12px; border-radius: 20px; color: white; background-color: #3498db; font-size: 0.8rem; margin-bottom: 1rem; }
+.web-link { display: block; margin-top: 20px; padding: 10px; background: #3498db; color: white; text-align: center; text-decoration: none; border-radius: 5px; }
+
+/* ESTILO BOTÓN SALIR MAPA */
+.exit-button-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1100; 
+}
+
+.exit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0f2f7 0%, #d1edf5 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.exit-button img {
+  width: 22px;
+  height: 22px;
+}
+
+.exit-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}

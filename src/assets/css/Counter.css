@@ -1,0 +1,38 @@
+.counter-container {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.img-item img {
+    width: 300px;
+    height: auto;
+    background-size: contain;
+}
+
+.counter-item {
+    text-align: center;
+}
+
+.counter-item-container {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.counter-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight:100;
+    color: black;
+}
+
+.counter-label {
+    display: block;
+    font-size: 1.2rem;
+    color: #1367d3;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}

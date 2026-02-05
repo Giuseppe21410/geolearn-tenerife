@@ -1,0 +1,98 @@
+.introduction-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 8%; /* Espaciado generoso */
+  min-height: 70vh; /* Para que ocupe una buena parte de la pantalla */
+  background-color: #f8fafc;
+  gap: 3rem; /* Espacio entre el texto y la imagen */
+}
+
+@media (max-width: 900px) {
+  .introduction-section {
+    flex-direction: column; /* Columna en móviles */
+    text-align: center;
+    padding: 4rem 5%;
+  }
+  .introduction-image {
+    order: -1; /* Mueve la imagen arriba en móviles */
+    margin-bottom: 2rem;
+  }
+}
+
+.introduction-content {
+  flex: 1;
+  max-width: 600px; /* Ancho máximo para el texto */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinea el texto a la izquierda por defecto */
+}
+
+@media (max-width: 900px) {
+  .introduction-content {
+    align-items: center; /* Centra el texto en móviles */
+    max-width: 100%;
+  }
+}
+
+.introduction-title {
+  font-size: 3.2rem; /* Título grande y atractivo */
+  color: #1a3b5c; /* Azul oscuro para el texto */
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  text-align: left;
+}
+
+.introduction-description {
+  font-size: 1.15rem;
+  color: #3b506b;
+  line-height: 2;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.introduction-button {
+  background-color: #1367d3; /* Tu azul corporativo */
+  color: white;
+  padding: 1.1rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(19, 103, 211, 0.3);
+  align-self: flex-start;
+}
+
+.introduction-button:hover {
+  background-color: #0f52a8; /* Un azul ligeramente más oscuro al pasar el ratón */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(19, 103, 211, 0.4);
+}
+
+.introduction-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Alinea la imagen a la derecha */
+}
+
+@media (max-width: 900px) {
+  .introduction-image {
+    justify-content: center; /* Centra la imagen en móviles */
+  }
+}
+
+.introduction-image img {
+  max-width: 90%;
+  height: auto;
+  animation: float 3s ease-in-out infinite; /* Animación flotante suave */
+}
+
+/* Animación flotante para la imagen */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}

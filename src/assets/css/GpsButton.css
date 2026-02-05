@@ -1,0 +1,30 @@
+.gps-button {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  background:none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  border: none;
+  transition: none;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.gps-button.active {
+  background: white; 
+  color: white;
+  outline: none;
+}
+
+
+
+.gps-button img  {
+  width: 30px;
+  height: 30px;
+}
+
+.gps-icon {
+  font-size: 1.2rem;
+}
+

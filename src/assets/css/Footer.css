@@ -1,0 +1,61 @@
+.footer-container {
+  width: 100%;
+  padding: 1.5rem 8%;
+  background: linear-gradient(135deg, #e0f2f7 0%, #d1edf5 100%);
+  border-top: 1px solid rgba(19, 103, 211, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  height: 35px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+.footer-info p, .footer-credits p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.footer-legal, .footer-credits p {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-island-img {
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .footer-left, .footer-right {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-right {
+    text-align: center;
+  }
+}
