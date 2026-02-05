@@ -1,4 +1,4 @@
-# Logs
+npx cap add android# Logs
 logs
 *.log
 npm-debug.log*
@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+android
 
 # Editor directories and files
 .env
