@@ -20,5 +20,6 @@ fs.readdirSync(buildPath).forEach(file => {
     }).getObfuscatedCode();
 
     fs.writeFileSync(filePath, obfuscatedCode);
+    console.log(`✅ Ofuscado: ${file}`);
   }
 });
