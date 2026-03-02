@@ -1,0 +1,88 @@
+.search-error-toast,
+.search-success-toast {
+    position: fixed;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #e8f0fe 0%, #c7d9fc 100%);
+    color: #1e40af;
+    padding: 8px 18px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 10px;
+    max-height: 50px;
+    z-index: 3000;
+    white-space: nowrap;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(19, 103, 211, 0.15);
+    animation:
+        fadeInDown 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+        fadeOut 0.4s ease-out 2.2s forwards;
+
+    overflow: hidden;
+}
+
+.search-error-toast.searching {
+    background: linear-gradient(135deg, #e8f0fe 0%, #c7d9fc 100%);
+    color: #1e40af;
+}
+.search-error-toast::after,
+.search-success-toast::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    animation: progressLine 2.0s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.search-success-toast::after {
+    background: #2ecc71;
+}
+
+.search-error-toast::after {
+    background: #e74c3c;
+}
+
+@keyframes progressLine {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    75% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.95);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}

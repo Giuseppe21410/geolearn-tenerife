@@ -1,0 +1,152 @@
+.home-container {
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../img/fondo-menu.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+}
+
+.home-content {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+      rgba(19, 103, 211, 0.8) 0%,
+      rgba(10, 25, 47, 0.9) 100%);
+  z-index: -1;
+}
+
+.info-section {
+  position: relative;
+  background: #f8fafc;
+  min-height: 400px;
+  z-index: 1;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+}
+
+.home-header {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.icon-cabildo {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.3rem;
+  filter: brightness(0) invert(1);
+}
+
+.icon-cabildo a {
+  display: block;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon-cabildo a:active {
+  transform: scale(0.92);
+}
+
+.icon-cabildo a:focus-visible {
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.icon-cabildo img {
+  width: 60px;
+  height: auto;
+}
+
+.icon-page-img img {
+  height: 200px;
+  width: auto;
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+
+  .icon-page-img img {
+    height: 160px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: env(safe-area-inset-top, 0px);
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .icon-cabildo {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .icon-cabildo img {
+    width: 45px;
+  }
+
+  .icon-page-img img {
+    height: 120px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    padding: 0 1.2rem;
+    margin-bottom: 22px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

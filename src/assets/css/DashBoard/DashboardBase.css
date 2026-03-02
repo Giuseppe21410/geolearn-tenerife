@@ -1,0 +1,138 @@
+/* ==========================================================
+   ESTRUCTURA BASE Y HEADER DEL DASHBOARD
+   ========================================================== */
+
+.dashboard-container {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 2rem;
+    background: #f8fafc;
+    min-height: 100vh;
+    color: #1e293b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.logo-header {
+    height: 100px;
+    width: auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.header-left .gps-button {
+    margin-left: auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.group-control {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* =================================================
+   BOTONES DEL HEADER (gps-button, exit-button)
+   ================================================= */
+.gps-button,
+.exit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #e8f0fe 0%, #c7d9fc 100%);
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(19, 103, 211, 0.15);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.gps-button:active,
+.exit-button:active {
+    transform: scale(0.92);
+    box-shadow: 0 2px 8px rgba(19, 103, 211, 0.1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .gps-button:hover,
+    .exit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(19, 103, 211, 0.2);
+    }
+}
+
+/* --- Efecto Glassmorphism (Clase Reutilizable) --- */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 900px) {
+    .dashboard-container {
+        padding: 1rem;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        margin-right: 0;
+        margin-bottom: 1.25rem;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-header {
+        height: 64px;
+    }
+
+    .group-control {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 0.65rem;
+    }
+
+    .logo-header {
+        height: 52px;
+    }
+}

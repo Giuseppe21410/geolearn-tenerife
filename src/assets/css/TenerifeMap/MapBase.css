@@ -1,0 +1,26 @@
+/* ==========================================================
+   ESTRUCTURA BASE Y LAYOUT DEL MAPA
+   ========================================================== */
+
+.map-page-container {
+    display: flex;
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-wrapper {
+    flex-grow: 1;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+    .map-wrapper.with-panel {
+        margin-right: 0 !important;
+        margin: 0 !important;
+    }
+}

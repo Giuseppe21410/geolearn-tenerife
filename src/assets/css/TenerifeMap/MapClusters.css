@@ -1,0 +1,30 @@
+/* ==========================================================
+   ESTILOS DE CLUSTERS DE MARCADORES
+   ========================================================== */
+
+.custom-cluster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    backdrop-filter: blur(6px);
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cluster-small {
+    width: 35px;
+    height: 35px;
+}
+
+.cluster-medium {
+    width: 45px;
+    height: 45px;
+}
+
+.cluster-large {
+    width: 55px;
+    height: 55px;
+}

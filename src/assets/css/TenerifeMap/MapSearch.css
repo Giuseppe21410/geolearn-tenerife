@@ -1,0 +1,108 @@
+/* ==========================================================
+   ELEMENTOS DE BÚSQUEDA DEL MAPA
+   ========================================================== */
+
+.search-glass-wrapper {
+    width: calc(100vw - 72px);
+    max-width: 380px;
+    display: flex;
+    background: linear-gradient(135deg, #e8f0fe 0%, #c7d9fc 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 4px 10px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-glass-wrapper input {
+    background: transparent;
+    border: none;
+    color: #2c3e50;
+    padding: 10px 4px;
+    flex-grow: 1;
+    outline: none;
+    font-weight: 600;
+    font-size: 14px;
+    height: 15px;
+}
+
+.search-glass-wrapper input::placeholder {
+    color: black;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: transform 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .search-btn:hover {
+        transform: scale(1.15);
+    }
+}
+
+.search-btn:active {
+    transform: scale(0.95);
+}
+
+.search-btn img {
+    width: 20px;
+    height: 20px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.search-navigation {
+    position: absolute;
+    top: 64px;
+    left: 20px;
+    z-index: 1050;
+}
+
+.search-navigation button {
+    background: linear-gradient(135deg, #e8f0fe 0%, #c7d9fc 100%);
+    color: black;
+    border: 1px solid rgba(19, 103, 211, 0.2);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.78rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(19, 103, 211, 0.15);
+    transition: all 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .search-navigation button:hover {
+        transform: scale(1.05);
+    }
+}
+
+.search-navigation button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+    .search-glass-wrapper {
+        width: calc(100vw - 70px);
+        padding: 3px 8px;
+    }
+
+    .search-navigation {
+        top: 62px;
+        left: 10px;
+    }
+}

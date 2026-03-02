@@ -1,0 +1,14 @@
+.footer-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f8fafc 0%, #64c6fd 100%);
+  padding: 3rem 5%;
+  border-top: none;
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 2.5rem 5%;
+  }
+}

@@ -1,0 +1,174 @@
+/* ==========================================================
+   CONTROLES DEL MAPA ( Satélite, GPS, Salir)
+   ========================================================== */
+
+.custom-map-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 14px;
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.view-toggle-btn {
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+    border: 2px solid #e8f0fe;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .view-toggle-btn:hover {
+        transform: scale(1.05);
+    }
+}
+
+.view-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.view-toggle-btn.mode-map {
+    background-image: url('../../img/tenerife-satelite.webp');
+}
+
+.view-toggle-btn.mode-sat {
+    background-image: url('../../img/tenerife-vista.webp');
+}
+
+.view-toggle-label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 3px 0;
+    font-weight: bold;
+    border-radius: 0px 0px 12px 12px;
+}
+
+
+.left-top-buttons {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1100;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+    width: fit-content;
+}
+
+.exit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e8f0fe 0%, #c7d9fc 100%);
+    box-shadow: 0 4px 12px rgba(19, 103, 211, 0.15);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .exit-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .gps-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.exit-button img {
+    width: 19px;
+    height: 19px;
+}
+
+.exit-button:active {
+    transform: scale(0.9);
+}
+
+.gps-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #e8f0fe 0%, #c7d9fc 100%);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(19, 103, 211, 0.15);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.gps-button img {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+.gps-button:active {
+    transform: scale(0.9);
+}
+
+@media (max-width: 480px) {
+    .left-top-buttons {
+        top: 10px;
+        left: 10px;
+    }
+
+    .exit-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .custom-map-controls {
+        bottom: 16px;
+        left: 10px;
+    }
+
+    .gps-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .view-toggle-btn {
+        width: 58px;
+        height: 58px;
+    }
+
+    .leaflet-bar {
+        width: 58px !important;
+    }
+
+    .leaflet-bar a {
+        width: 29px !important;
+        height: 24px !important;
+    }
+
+    .leaflet-bottom.leaflet-left {
+        bottom: 70px !important;
+        left: 0px !important;
+    }
+}

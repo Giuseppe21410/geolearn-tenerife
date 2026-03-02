@@ -1,0 +1,29 @@
+.gps-button-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 6px 6px;
+  margin-right: 10px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gps-button-home:active {
+  transform: scale(0.92);
+}
+
+
+.gps-button-home:focus-visible {
+  outline: 2px solid #1367d3;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(19, 103, 211, 0.35);
+}
+
+
+.gps-icon {
+  font-size: 1.2rem;
+}

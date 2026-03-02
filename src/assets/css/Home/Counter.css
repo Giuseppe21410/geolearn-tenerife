@@ -1,0 +1,107 @@
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 5%;
+    border-radius: 10px;
+}
+
+.mobile-counter-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.mobile-counter-title {
+    font-size: 2.2rem;
+    color: #1a3b5c;
+    margin: 0 0 12px 0;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.title-underline {
+    width: 80px;
+    height: 5px;
+    background-color: #1367d3;
+    border-radius: 4px;
+}
+
+.counter-item-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-height: 180px;
+}
+
+.loading-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #1367d3;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.counter-item {
+    text-align: center;
+}
+
+.counter-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: black;
+}
+
+.counter-label {
+    display: block;
+    font-size: 1.2rem;
+    color: #1367d3;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+
+@media (max-width: 480px) {
+    .mobile-counter-title {
+        font-size: 1.8rem;
+    }
+
+    .title-underline {
+        width: 60px;
+        height: 4px;
+    }
+
+    .counter-number {
+        font-size: 2.8rem;
+        font-weight: bold;
+    }
+
+    .counter-label {
+        font-size: 1.05rem;
+    }
+
+    .counter-item-container {
+        gap: 2.5rem 1rem;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
