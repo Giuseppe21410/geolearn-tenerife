@@ -8,6 +8,8 @@ const Dashboard = lazy(() => import('../pages/Dashboard'));
 
 const LoadingFallback = () => (
   <div
+    role="status"
+    aria-live="polite"
     style={{
       display: 'flex',
       justifyContent: 'center',
@@ -19,6 +21,7 @@ const LoadingFallback = () => (
   >
     <div style={{ textAlign: 'center' }}>
       <div
+        aria-hidden="true"
         style={{
           width: '50px',
           height: '50px',
@@ -29,7 +32,7 @@ const LoadingFallback = () => (
           margin: '0 auto 20px',
         }}
       />
-      <p style={{ color: '#666', fontSize: '16px' }}>Cargando...</p>
+      <p style={{ color: '#666', fontSize: '16px' }}>Cargando aplicación...</p>
       <style>
         {`
           @keyframes spin {
@@ -56,7 +59,7 @@ function App() {
 
   if (!isMobile) {
     return (
-      <div style={{
+      <main style={{
         height: '100vh',
         width: '100vw',
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.90)), url(${fondoMenu})`,
@@ -71,7 +74,7 @@ function App() {
         padding: '20px',
         fontFamily: 'system-ui, -apple-system, sans-serif'
       }}>
-        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '24px', opacity: 0.9 }}>
+        <svg aria-hidden="true" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '24px', opacity: 0.9 }}>
           <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
           <line x1="12" y1="18" x2="12.01" y2="18"></line>
         </svg>
@@ -83,7 +86,7 @@ function App() {
           <br /><br />
           Para disfrutar del mapa interactivo y nuestro dashboard, por favor <strong>accede desde tu teléfono móvil</strong> o reduce el ancho de esta ventana.
         </p>
-      </div>
+      </main>
     );
   }
 
