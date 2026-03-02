@@ -194,11 +194,11 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ selectedItem, onClose, markerColo
   };
 
   const sharePage = async () => {
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${selectedItem.latitud},${selectedItem.longitud}`;
+    const GeoLearnMapUrl = `${window.location.href}?lat=${selectedItem.latitud}&lng=${selectedItem.longitud}`;
     const shareData = {
       title: selectedItem.nombre,
       text: `Mira este lugar en Tenerife: ${selectedItem.nombre}\n\nLo he descubierto en GeoLearn Tenerife 🌍\n¡Abre el enlace para verlo en el mapa!`,
-      url: googleMapsUrl,
+      url: GeoLearnMapUrl,
     };
     try {
       if (navigator.share) {
