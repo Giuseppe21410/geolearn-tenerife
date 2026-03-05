@@ -60,11 +60,16 @@ function App() {
 
     return window.innerWidth <= 1366 || isMobileUA || isIPadOS;
   };
+  const checkOrientation = () => window.innerWidth > window.innerHeight;
 
   const [isMobile, setIsMobile] = useState(checkDevice());
+  const [isLandscape, setIsLandscape] = useState(checkOrientation());
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(checkDevice());
+    const handleResize = () => {
+      setIsMobile(checkDevice());
+      setIsLandscape(checkOrientation());
+    };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -97,6 +102,38 @@ function App() {
           Esta experiencia inmersiva ha sido diseñada en exclusiva para dispositivos móviles.
           <br /><br />
           Para disfrutar del mapa interactivo y nuestro dashboard, por favor <strong>accede desde tu teléfono móvil</strong> o reduce el ancho de esta ventana.
+        </p>
+      </main>
+    );
+  }
+
+  if (isLandscape) {
+    return (
+      <main style={{
+        height: '100vh',
+        width: '100vw',
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), url(${fondoMenu})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'white',
+        textAlign: 'center',
+        padding: '20px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        zIndex: 9999
+      }}>
+        <svg aria-hidden="true" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '24px', opacity: 0.9, transform: 'rotate(-90deg)', transition: 'transform 0.5s ease' }}>
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </svg>
+        <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '16px', letterSpacing: '-0.02em' }}>
+          Gira tu dispositivo
+        </h1>
+        <p style={{ fontSize: '1.1rem', maxWidth: '400px', lineHeight: '1.5', color: '#e2e8f0' }}>
+          Para disfrutar de la mejor experiencia en GeoLearn Tenerife, por favor <strong>usa tu dispositivo en posición vertical</strong> (modo retrato).
         </p>
       </main>
     );
