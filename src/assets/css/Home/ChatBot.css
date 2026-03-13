@@ -19,6 +19,7 @@
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
 }
 
 .chat-toggle:focus-visible {
@@ -36,6 +37,73 @@
 
 .chat-toggle:active {
   transform: scale(0.95);
+}
+
+/* Chat toggle icons animation */
+.chat-toggle-icon-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-toggle-icon-wrapper>svg {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes slideUpOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.chat-toggle-icon-wrapper.initial .icon-close {
+  opacity: 0;
+  transform: translateY(150%);
+  pointer-events: none;
+}
+
+.chat-toggle-icon-wrapper.initial .icon-message {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chat-toggle-icon-wrapper.open .icon-message {
+  animation: slideUpOut 0.3s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.chat-toggle-icon-wrapper.open .icon-close {
+  animation: slideUpIn 0.3s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.chat-toggle-icon-wrapper.closed .icon-message {
+  animation: slideUpIn 0.3s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.chat-toggle-icon-wrapper.closed .icon-close {
+  animation: slideUpOut 0.3s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .chat-window {

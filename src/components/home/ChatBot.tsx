@@ -12,6 +12,7 @@ interface Message {
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasToggled, setHasToggled] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -71,11 +72,17 @@ const ChatBot: React.FC = () => {
     <div className={`chatbot-container ${isOpen ? 'open' : ''}`}>
       <button
         className="chat-toggle"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          setIsOpen(!isOpen);
+          if (!hasToggled) setHasToggled(true);
+        }}
         aria-expanded={isOpen}
         aria-label={isOpen ? 'Cerrar asistente GeoBot' : 'Abrir asistente GeoBot para buscar centros en Tenerife'}
       >
-        {isOpen ? <X aria-hidden="true" color='white' /> : <MessageCircleMore aria-hidden="true" color='white' />}
+        <div className={`chat-toggle-icon-wrapper ${hasToggled ? (isOpen ? 'open' : 'closed') : 'initial'}`}>
+          <X aria-hidden="true" color='white' className="icon-close" />
+          <MessageCircleMore aria-hidden="true" color='white' className="icon-message" />
+        </div>
       </button>
 
       {isOpen && (

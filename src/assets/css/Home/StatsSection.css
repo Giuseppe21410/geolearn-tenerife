@@ -11,6 +11,9 @@
   height: 500px;
   border-radius: 15px;
   overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  transform: translateZ(0);
 }
 
 .stats-image-container-mobile {
